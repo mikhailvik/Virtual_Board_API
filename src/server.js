@@ -8,6 +8,8 @@ console.log(`Node.js ${process.version}`)
 
 // Allow the API to receive JSON
 app.use(express.json())
+// Serve frontend files
+app.use(express.static('project'))
 
 // Test route
 app.get('/', (req, res) => {
