@@ -1,0 +1,32 @@
+{
+  "name": "virtual_board_api",
+  "version": "1.0.0",
+  "description": "REST API for my Virtual Board project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon -L src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikhailvik/Virtual_Board_API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikhailvik/Virtual_Board_API/issues"
+  },
+  "homepage": "https://github.com/mikhailvik/Virtual_Board_API#readme",
+  "dependencies": {
+    "@prisma/client": "^6.17.1",
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "prisma": "^6.17.1"
+  }
+}

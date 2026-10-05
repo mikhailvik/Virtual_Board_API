@@ -1,0 +1,35 @@
+
+@API_URL = http://localhost:3001
+@DEV_TOKEN = {{$dotenv DEV_TOKEN}}
+
+### Get notes from Board 1 test
+GET {{API_URL}}/notes?board_id=1
+Authorization: Bearer {{DEV_TOKEN}}
+
+
+### Create new note on Board 1
+POST {{API_URL}}/notes
+Content-Type: application/json
+Authorization: Bearer {{DEV_TOKEN}}
+
+{
+    "board_id": 1,
+    "note": "My first note!",
+    "color": "yellow",
+    "position_x": 100,
+    "position_y": 100
+}
+
+
+### Update Note 1
+PUT {{API_URL}}/notes/1
+Content-Type: application/json
+Authorization: Bearer {{DEV_TOKEN}}
+
+{
+    "note": "My updated note!",
+    "color": "pink",
+    "position_x": 200,
+    "position_y": 200
+}
+
