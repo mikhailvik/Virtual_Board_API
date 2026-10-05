@@ -45,16 +45,46 @@ body {
 
 #board {
     position: relative;
-    min-height: 600px;
+    min-height: 600px;;
+}
+
+.board-header h1{
+    text-align: center;
+    align-items: center;
+}
+
+#add-note-button {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#board button{
+    margin: 10px;
+    min-height: 30px;
+    align-items: center;
+    width: 60px;
+    margin-top: 20px;
 }
 
 .note {
     position: absolute;
-    width: 150px;
-    min-height: 100px;
+    width: 300px;
+    min-height: 200px;
     padding: 15px;
     box-sizing: border-box;
     background-color: yellow;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #555;
+    border-radius: 8px;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    text-align: center;
+}
+
+/* Note text */
+.note div {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
 }

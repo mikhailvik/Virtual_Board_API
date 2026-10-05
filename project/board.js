@@ -7,7 +7,8 @@ const token = localStorage.getItem('token')
 // Board that we are currently using
 const boardId = 1
 
-// Load all notes from the board
+// Load all notes from the board------------------------------
+
 async function loadNotes() {
 
     try {
@@ -28,10 +29,11 @@ async function loadNotes() {
         const notes = await response.json()
         console.log('Notes:', notes)
 
-        // Show notes on the board
+// Show notes on the board-------------------------------------------
+
         const board = document.getElementById('board')
 
-        // Clear old notes before showing them again
+// Clear old notes before showing them again---------------------------
         board.innerHTML = ''
 
         notes.forEach(note => {
@@ -46,6 +48,75 @@ async function loadNotes() {
             const noteText = document.createElement('div')
             noteText.textContent = note.note
             noteElement.appendChild(noteText)
+
+
+//Delete button note------------------------------------
+
+            // Delete button
+            const deleteButton = document.createElement('button')
+            deleteButton.textContent = 'Delete'
+            noteElement.appendChild(deleteButton)
+
+                // Delete note
+                deleteButton.addEventListener('click', async (event) => {
+
+                    event.stopPropagation()
+
+                    const response = await fetch(`${API_URL}/notes/${note.id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    })
+
+                    if (response.ok) {
+                        console.log('Note deleted')
+                        loadNotes()
+                    }
+                })
+
+//Color button note------------------------------------
+
+            // Color button
+            const colorButton = document.createElement('button')
+            colorButton.textContent = 'Color'
+            noteElement.appendChild(colorButton)
+
+            // Change note color
+            colorButton.addEventListener('click', async (event) => {
+
+            event.stopPropagation()
+
+            // Change between yellow and pink
+            let newColor = 'pink'
+
+            if (noteElement.style.backgroundColor === 'pink') {
+                newColor = 'yellow'
+            }
+
+            noteElement.style.backgroundColor = newColor
+
+            // Save new color in database
+            const response = await fetch(`${API_URL}/notes/${note.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    note: note.note,
+                    color: newColor,
+                    position_x: noteElement.offsetLeft,
+                    position_y: noteElement.offsetTop
+                })
+            })
+
+        if (response.ok) {
+            console.log('Color updated')
+        }
+    })
+
+//Edit button note------------------------------------
 
             // Edit button
             const editButton = document.createElement('button')
