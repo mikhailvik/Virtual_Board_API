@@ -1,5 +1,6 @@
 // Authentication API
-const AUTH_API = 'http://localhost:8080'
+//const AUTH_API = 'http://localhost:8080'
+const AUTH_API = 'https://virtual-board-authentication.onrender.com'
 
 // Login form get elements
 const loginForm = document.getElementById('login-form')
@@ -39,6 +40,7 @@ loginForm.addEventListener('submit', async (event) => {
         /*loginMessage.textContent = 'Login successful!'
 
         console.log('Logged in user:', data.id)*/
+
 
         // Open the Virtual Board page
         window.location.href = 'board.html'

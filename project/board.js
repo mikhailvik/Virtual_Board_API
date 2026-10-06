@@ -1,5 +1,6 @@
 // Virtual Board API
-const API_URL = 'http://localhost:3001'
+//const API_URL = 'http://localhost:3001'
+const API_URL = 'https://virtual-board-api-1prk.onrender.com'
 
 // Get JWT saved after login
 const token = localStorage.getItem('token')

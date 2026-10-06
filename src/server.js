@@ -1,3 +1,4 @@
+const cors = require('cors')
 const express = require('express')
 const app = express()
 require('dotenv').config()
@@ -8,6 +9,10 @@ console.log(`Node.js ${process.version}`)
 
 // Allow the API to receive JSON
 app.use(express.json())
+
+// Allow requests from the frontend
+app.use(cors())
+
 // Serve frontend files
 app.use(express.static('project'))
 
