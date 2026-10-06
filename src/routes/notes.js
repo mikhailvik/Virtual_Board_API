@@ -1,3 +1,4 @@
+// Source: Developed with guidance from OpenAI ChatGPT
 const express = require('express')
 const router = express.Router()
 const { PrismaClient } = require('@prisma/client')  // object destructuring

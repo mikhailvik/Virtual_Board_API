@@ -1,4 +1,5 @@
-// Virtual Board API
+// Source: Developed with guidance from OpenAI ChatGPT
+//Virtual Board API
 //const API_URL = 'http://localhost:3001'
 const API_URL = 'https://virtual-board-api-1prk.onrender.com'
 
