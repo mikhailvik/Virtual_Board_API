@@ -49,37 +49,12 @@ async function loadNotes() {
             noteText.textContent = note.note
             noteElement.appendChild(noteText)
 
-
-//Delete button note------------------------------------
-
-            // Delete button
-            const deleteButton = document.createElement('button')
-            deleteButton.textContent = 'Delete'
-            noteElement.appendChild(deleteButton)
-
-                // Delete note
-                deleteButton.addEventListener('click', async (event) => {
-
-                    event.stopPropagation()
-
-                    const response = await fetch(`${API_URL}/notes/${note.id}`, {
-                        method: 'DELETE',
-                        headers: {
-                            'Authorization': `Bearer ${token}`
-                        }
-                    })
-
-                    if (response.ok) {
-                        console.log('Note deleted')
-                        loadNotes()
-                    }
-                })
-
 //Color button note------------------------------------
 
             // Color button
             const colorButton = document.createElement('button')
             colorButton.textContent = 'Color'
+            colorButton.className = 'color-button'
             noteElement.appendChild(colorButton)
 
             // Change note color
@@ -121,6 +96,7 @@ async function loadNotes() {
             // Edit button
             const editButton = document.createElement('button')
             editButton.textContent = 'Edit'
+            editButton.className = 'edit-button'
             noteElement.appendChild(editButton)
 
             // Do not drag the note when clicking Edit
@@ -162,6 +138,32 @@ async function loadNotes() {
                     }
                 }
             })
+
+//Delete button note------------------------------------
+
+            // Delete button
+            const deleteButton = document.createElement('button')
+            deleteButton.textContent = 'Delete'
+            deleteButton.className = 'delete-button'
+            noteElement.appendChild(deleteButton)
+
+                // Delete note
+                deleteButton.addEventListener('click', async (event) => {
+
+                    event.stopPropagation()
+
+                    const response = await fetch(`${API_URL}/notes/${note.id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    })
+
+                    if (response.ok) {
+                        console.log('Note deleted')
+                        loadNotes()
+                    }
+                })
 
 
 

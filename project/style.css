@@ -39,7 +39,7 @@ body {
     margin-top: 20px;
     padding: 10px;
     cursor: pointer;
-    background-color: greenyellow;
+    background-color: yellow;;
 }
 
 
@@ -53,12 +53,20 @@ body {
     align-items: center;
 }
 
+
 #add-note-button {
     display: block;
     margin: 15px auto;
     padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
     cursor: pointer;
+    border: 1px solid white;
 }
+
 
 #board button{
     margin: 10px;
@@ -66,16 +74,17 @@ body {
     align-items: center;
     width: 60px;
     margin-top: 20px;
+    border-radius: 4px;
 }
 
 .note {
     position: absolute;
-    width: 300px;
+    width: 200px;
     min-height: 200px;
     padding: 15px;
     box-sizing: border-box;
     background-color: yellow;
-    border: 1px solid #555;
+    border: 1px solid white;
     border-radius: 8px;
     box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -87,4 +96,41 @@ body {
     text-align: center;
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border: 1px solid white;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+.edit-button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border: 1px solid white;
+}
+
+.edit-button:hover {
+    background-color: #388E3C;;
+}
+
+/* Color button */
+.color-button {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border: 1px solid white;
+}
+
+.color-button:hover {
+    background-color: #2980b9;
 }
